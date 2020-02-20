@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAAAAAAYplnuAAAABGdBTUEAALGPC/xhBQAABS1JREFUeNrt3P9P1HUcB3D/kQOOESI1PbXhiTgvV0iu7IKKciz8RupUkiHkF46oH6wkj0inFQsyUqBFSngym26MNsuNGQvKBJaMIOREIDmI4+4+7zJ3r88Hurv3G/e5Xu/PfL1/ved2D27vz/v9vuP9ei1gBhwLCE1oQhOa0IQmNKEJTWhCE5rQhCY0oQlNaEI/1GifZ9R9a8g9NukzBFq5e911rDjXnm5LS7Oty8wrPXXllk9u9J3LZRssZtOskbgmv3FQkRUd6K3MSDCFGmbbu92KlOiBcmuMKeywfnBbPrS36akI5H9GbOYVRTL0SNlCE28sP+OTCt2/JcbEH0knZyRC92WbhEZilV8a9PCrcz7RJzY5Pvysrq7GWZS1LFb7yqNNsqCnirSu+GcqfrgdnLzKZM/pHO1sT+uSBF0Tr1kj7F+Pznl58mKW5tPeNiEFutOqkpLLR0ItLW8/ou4zp2VAT+9RzY+fC/2geU+qUyR9UAL0pSTwWFrCnvqccCCJ+QgfPbUJzAm14WMTOyCW4UZHt6kfdOF0hFwXzHxzIzY6UAzm1BsRk04I5nmR0X0rwXI0cvLmqmBw2a/I6AZYglf0cKKl8OfV4qL96npXyDtWfAfL3i4/KvqPNfB4uXjZ0aeDWdswKroNtrpVA9zwAThQXUVFn4DZsZV/VG6AM/fnmOhAPqCd/PS15GC4BBN999kgI+48Pz20OpjO8SKi+1LgeNfBT0++EEw/OYKIboc93DogMJl2wvbSi4h2xcEpaFwgDttLUjsiugaew+y/BOKVsKh/i4g+CugtIj9pVEP8S0S0AxT5Ir8eNUC8Cg+t7AVFkUj+HOwuFXho/3ZA7xfJN8OR8DAe2qd+1RLa4y7AYvMmHnomB9CO+aFL8NDejQ+KPoCHnn6F0ISOAnq/cdCdxYX3R8FXxkHrNAhNaEITmtCEJjShCU1oQhOa0IQmNKEJTWhCE5rQhCY0oQltNLQSCA7FOOiO/N33x84646AN+c9P+t84oWVHP/jNmoN4aEPeYZrvbTGXDLfFDHkvT3kd0PtE8mdj5nGvPVpoVgLoPSKniXqIf4KILgfFZpFbvZ9CvB4RrSpeErk/XQH3p1sQ0d/Ak5UxJhCHm8sLryKiv0+EmoDfBRYbqEm0dCOie5dD9cWP/LQnE+qg3IjosQyoc2nmpwehuC97ChHt2y5ajXhvtC+a16oeLbSmnHMzv3brDIQ/RkVfhCLlVO6TqLwBFcStqOg+tdyXW7w1sg6Wmn5UtFc95xXwyjlbYX3M9aKiWRWgU25wZschiB5nuOifLUAp56zpUPec3I6M9uYBeuX1iMkjEHxxAhnNmtQ+GQWRDk0/pei04OmBHrWrvRBOhT9U/7lNbW7Ui45m9WqDK8uFsF+B34Ovh6a3FHz0+MuapkVnQ69708fVriQrfmH4aNb6mKaTypFQ1bPuUk33rvcVGdD+dzQ9mGKfa5zbs8bTYtf0rNkwxGRAszu5s7sDOTXdgTzdX2xM1Ly6+DKTA8161v+3D9Oxf/sw7ctaOqsPU/yJgCxo1pEu1vEqrmyKSYNmnXYRs9kxwSRCs/7dZq55kdPDpEIzT3Uqx7y2WadekDp2JlS6S5ZGIC8pvanXO+naA9LXdXhtfOiuhNaD1/Rrualzt01l2HVo/eK42eKE1Ndqf/Pr+C5R6Gs63tVcWXSvr+nqNFv681sd1W0DM/q+RZQ6yCoG6yD7PwxCE5rQhCY0oQlNaEITmtCEJjShCU1oQhP6IUT/DQYXJg+PZ0n6AAAAAElFTkSuQmCC">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAURQTFRFAAAAHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dMeG1iQAAAGt0Uk5TAAABAgMGBwgKCwwNDhESExUYGRodHh8gISIoKSozNTg6Pj9AQkNGR0tMTVJXWF5iY2VmaGlvc3R1houMjZCSk52io6aqr7Cytb3Cw8bHyMnL0NLV2drf4eLj5Ojp6uzx8vP09fb3+Pn7/P4CDN88AAABHElEQVQ4y2NgQAKMTNwikkJsjIwMWAEjs5yVV2hYsJsBL1YljKym0dlZCXGp2RmuolhUMDLqJ2X7GsjKKNnGZztxYFEgFpztCdLJyGKWkayFYQQjo2FWojpYmJHPJ9uBGUMBs1N2AC8jRK1ldiA/hgIev2xnqDZGvewYaQwFQqHZdlCLGTUyEhUwFIiHZ9vAFKinp6pgKJCIyLaGKVCOilTEq4BTSooTnwLsETHyFDAK6eoI4g1JtbQUVdIjSzg02x6mQDMjCTO6efxREowMZpJzRk5yQQKYidYkG55ofbMdMRItA6NkCCzZm2ekamMGCSOjcQo847hwYQkyRjaLWEjWy/SQxJ45WeRtvIGZ192IH2f+ZuIBZn92FGkAGYQ9TH6LfCQAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAJxQTFRFAAAAHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0d+YbeMgAAADR0Uk5TAAABAgMFBggJCg4PEy4wNkVGR0lTVFlcXWVmZ3N2gYKFh5CTl5mfoLO0v8HOz9XW2Nrb3SqZfD8AAAB7SURBVBjTjY9ZDoJQEASnUHDDfUcFAXdwv//dfA/NGE1M7M9KerpGxASvEyfjOsgzlOanTZqnVQXN2wjal56C4OiDuwtfHQizCrBdK1geLBgOPoC88y8Ax/k6Gkx/zQqzQmwfKWjdrfq1r+rlxdk8t6rpFF43TiaNovEA24IJLJUez8QAAAAASUVORK5CYII=">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#aaaaaa">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="CEREAL"/>
+<meta property="og:description" content="Cereal is a biannual, travel & style magazine based in the United Kingdom. Each issue focusses on a select number of destinations, alongside engaging interviews and stories on unique design, art, and fashion."/>
+<meta property="og:url" content="https://readcereal.com/"/>
+<meta property="og:site_name" content="CEREAL"/>
+<meta property="article:publisher" content="https://www.facebook.com/cerealmag/"/>
+<meta property="og:image" content="https://readcereal.com/wp-content/uploads/2017/05/Cereal-website-preview.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:description" content="Cereal is a biannual, travel & style magazine based in the United Kingdom. Each issue focusses on a select number of destinations, alongside engaging interviews and stories on unique design, art, and fashion."/>
+<meta name="twitter:title" content="Home"/>
+<meta name="twitter:site" content="@cerealmag"/>
+<meta name="twitter:image" content="https://readcereal.com/wp-content/uploads/2017/05/Cereal-website-preview.jpg"/>
+<meta name="twitter:creator" content="@cerealmag"/>
+<title>CEREAL &#8211; Travel &amp; Style Magazine</title>
+<!-- This site has installed PayPal for WooCommerce v1.4.16 - https://www.angelleye.com/product/woocommerce-paypal-plugin/ -->
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com'/>
+<link rel='dns-prefetch' href='//maps.googleapis.com'/>
+<link rel='dns-prefetch' href='//cloud.typography.com'/>
+<link rel='stylesheet' id='woocommerce-layout-css' href='https://readcereal.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=3.4.5' type='text/css' media='all'/>
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://readcereal.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=3.4.5' type='text/css' media='only screen and (max-width: 768px)'/>
+<link rel='stylesheet' id='woocommerce-general-css' href='https://readcereal.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=3.4.5' type='text/css' media='all'/>
+<style id='woocommerce-inline-inline-css' type='text/css'>.woocommerce form .form-row .required{visibility:visible}</style>
+<link rel='stylesheet' id='wcqi-css-css' href='https://readcereal.com/wp-content/plugins/woocommerce-quantity-increment/assets/css/wc-quantity-increment.css?ver=cdef2df6dc0d55a5c731c759fdcf5ba1' type='text/css' media='all'/>
+<link rel='stylesheet' id='wc-memberships-frontend-css' href='https://readcereal.com/wp-content/plugins/woocommerce-memberships/assets/css/frontend/wc-memberships-frontend.min.css?ver=1.10.6' type='text/css' media='all'/>
+<link rel='stylesheet' id='cereal-style-css' href='https://readcereal.com/wp-content/themes/cereal/style.css?ver=cdef2df6dc0d55a5c731c759fdcf5ba1' type='text/css' media='all'/>
+<link rel='stylesheet' id='typography-com-css' href='//cloud.typography.com/7178556/6093772/css/fonts.css?ver=cdef2df6dc0d55a5c731c759fdcf5ba1' type='text/css' media='all'/>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script>
+<script type='text/javascript' src='https://readcereal.com/wp-content/plugins/woocommerce-quantity-increment/assets/js/wc-quantity-increment.min.js?ver=cdef2df6dc0d55a5c731c759fdcf5ba1'></script>
+<link rel='https://api.w.org/' href='https://readcereal.com/wp-json/'/>
+<link rel="canonical" href="https://readcereal.com/"/>
+<link rel='shortlink' href='https://readcereal.com/'/>
+<link rel="alternate" type="application/json+oembed" href="https://readcereal.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Freadcereal.com%2F"/>
+<link rel="alternate" type="text/xml+oembed" href="https://readcereal.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Freadcereal.com%2F&#038;format=xml"/>
+<!-- SLP Custom CSS -->
+<style type="text/css">div#map.slp_map{width:0;height:0}div#slp_tagline{width:0}</style>
+
+	<noscript><style>.woocommerce-product-gallery{opacity:1!important}</style></noscript>
+	<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-36807587-1"]);_gaq.push(["_trackPageview"]);(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})()</script>
+</head>
+<body data-rsssl=1 class="home page-template page-template-homepage page-template-homepage-php page page-id-156 woocommerce-no-js group-blog">
+<div id="page" class="site">
+	<header id="masthead" class="site-header">
+		<div class="wrapper">
+			<div class="primaryHeader">
+				<div class="site-branding">
+					<h1 class="site-title"><a href="https://readcereal.com/" rel="home">CEREAL</a></h1>
+
+				</div><!-- .site-branding -->
+				<nav id="site-navigation" class="main-navigation">
+							
+						
+						
+<span class="city-guides-title">	</span>							
+				</nav>
+				<div class="searchForm">
+					<div class="searchFormInner">
+						<form role="search" method="get" id="searchform" class="searchform" action="https://readcereal.com/" autocomplete="off">
+			    			<div>
+								<input type="text" value="" name="s" id="searchHeader" placeholder="Search readcereal.com"/>
+								<input type="submit" id="searchsubmit" value="Search"/>
+							</div>
+						</form>		
+					</div>
+				</div><!-- search -->
+				<div class="secondary-menu">
+					<ul>
+	
+
+						<li class="myAccount">
+							<a href="/my-account">Account</a>
+						</li>
+
+						<li class="searchIcon searchTrigger">
+							<a>Search</a>
+						</li>
+						<li class="filterOpen">
+							<a>Menu</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cartMessage">
+				<div id="cereal-minicart-top">
+				<a class="closeMinicart">Keep Shopping</a>
+					<p class="cereal-mini-cart-product-empty">Your bag is currently empty.</p>
+					</div>			</div><!-- .cartMessage -->
+		</div>
+	</header><!-- #masthead -->	
+	<div class="fullMenu">
+		<div class="fullMenuWrapper">
+			<div class="menu-category-list-container"><ul id="menu-category-list" class="menu"><li id="menu-item-9506" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9506"><a href="https://readcereal.com/category/travel/">Travel</a></li>
+<li id="menu-item-9510" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9510"><a href="https://readcereal.com/category/art/">Art</a></li>
+<li id="menu-item-9719" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9719"><a href="https://readcereal.com/category/design/">Design</a></li>
+<li id="menu-item-9657" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9657"><a href="https://readcereal.com/category/style/">Style</a></li>
+<li id="menu-item-9658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9658"><a href="https://readcereal.com/city-guides/">City Guides</a></li>
+<li id="menu-item-9656" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9656"><a href="https://readcereal.com/shop/">Shop</a></li>
+</ul></div>			<div class="previewImg">			
+					
+				<script pagespeed_no_defer="">//<![CDATA[
+(function(){var g=this,h=function(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};var l=function(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};var m=function(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n,p=function(b,d,a,c,e){this.f=b;this.h=d;this.i=a;this.c=e;this.e={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.g=c;this.b={};this.a=[];this.d={}},q=function(b,d){var a,c,e=d.getAttribute("pagespeed_url_hash");if(a=e&&!(e in b.d))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.e.height&&c<=b.e.width)}a&&(b.a.push(e),b.d[e]=!0)};p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});var r=function(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.i;b.c&&(a+="&n="+b.c);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.g&&(e="&rd="+encodeURIComponent(JSON.stringify(s())),131072>=a.length+e.length&&(a+=e),d=!0);t=a;if(d){c=b.f;b=b.h;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(u){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}},s=function(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("pagespeed_url_hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].k&&a.height>=b[e].j)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b},t="";h("pagespeed.CriticalImages.getBeaconData",function(){return t});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','http://readcereal.com/?ref=bestwebsite.gallery','YddRYU7ik1',true,false,'dP_GGPD0B90');
+//]]></script><img class="catImg" src="https://readcereal.com/wp-content/themes/cereal/img/1x1.gif" alt="" pagespeed_url_hash="1776611159" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+			</div>
+			<div class="headerAbout">
+				<p>Cereal is a biannual, travel &#038; style magazine based in the United Kingdom. Each issue focusses on a select number of destinations, alongside engaging interviews and stories on unique design, art, and fashion.</p>
+				&copy; <img src="https://readcereal.com/wp-content/themes/cereal/img/logoWhite.svg" width="60" height="11" alt="Cereal Magazine" pagespeed_url_hash="3261727215" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+			</div>
+			<div class="menu-info-menu-container"><span class="menuTitle">Info</span> <ul class="infoMenu"><li></li><li id="menu-item-12973" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12973"><a href="https://readcereal.com/find-a-stockist/">Stockists</a></li>
+<li id="menu-item-9959" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9959"><a href="https://readcereal.com/contact/">Contact</a></li>
+<li id="menu-item-9960" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9960"><a href="https://readcereal.com/jobs/">Career</a></li>
+</ul></div>			<div class="menu-media-menu-container"><span class="menuTitle">Media</span> <ul class="infoMenu"><li></li><li id="menu-item-21496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21496"><a href="https://readcereal.com/playlist/">Playlists</a></li>
+<li id="menu-item-13773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13773"><a href="https://readcereal.com/film/">Film</a></li>
+</ul></div>			<div class="menu-website-menu-container"><span class="menuTitle">Website</span> <ul class="infoMenu"><li></li><li id="menu-item-23520" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23520"><a href="https://readcereal.com/terms-and-conditions/">Terms</a></li>
+<li id="menu-item-24073" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24073"><a href="https://readcereal.com/shipping/">Shipping</a></li>
+<li id="menu-item-23526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23526"><a href="https://readcereal.com/faqs/">FAQs</a></li>
+</ul></div>
+			<div class="socialMenu">
+				<div class="newsletterSignup">
+					<span class="menuTitle">Newsletter</span>
+					<form action="//readcereal.us6.list-manage.com/subscribe/post?u=d57521ff850d9b4f7a8e88659&amp;id=79b9c285f6" method="post" id="mc-embedded-subscribe-form-HEAD" name="mc-embedded-subscribe-form-HEAD" class="validate" target="_blank" novalidate="">
+    				<label for="Email" style="display: none">Email</label>
+						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="enter email" required="">
+						<div class="offScreen">
+    					<label for="Offscreen" style="display: none">Offscreen</label>    						
+							<input type="text" name="b_d57521ff850d9b4f7a8e88659_79b9c285f6" value="">
+						</div>
+						<input style="" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+					</form>
+				</div>
+				<a href="https://instagram.com/cerealmag" target="_blank" rel="noopener" title="CEREAL Instagram">
+					<img src="https://readcereal.com/wp-content/themes/cereal/img/instagram.svg" alt="Instagram" height="17" width="17" pagespeed_url_hash="369535323" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+				</a>
+				<a href="https://www.twitter.com/cerealmag" target="_blank" rel="noopener" title="CEREAL Twitter">
+					<img src="https://readcereal.com/wp-content/themes/cereal/img/twitter.svg" alt="Twitter" height="17" width="17" pagespeed_url_hash="752250956" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+				</a>
+				<a href="https://www.facebook.com/cerealmag" target="_blank" rel="noopener" title="CEREAL Facebook">
+					<img src="https://readcereal.com/wp-content/themes/cereal/img/facebook.svg" alt="Facebook" height="17" width="17" pagespeed_url_hash="3661498813" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+				</a>
+				<a href="https://uk.pinterest.com/cerealmag/" target="_blank" rel="noopener" title="CEREAL Pinterest">
+					<img src="https://readcereal.com/wp-content/themes/cereal/img/pinterest.svg" alt="Pinterest" height="17" width="17" pagespeed_url_hash="1093925507" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+				</a>
+			</div>
+		</div>
+	</div>
+		
+	<div id="content" class="site-content">	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			<div class="homeSplash">							
+				<ul class="contentGrid homeMenu">
+		
+					
+					<li class="contentItem landscape hoverImgs lazyload" data-bg="" style="background-image:url(https://readcereal.com/wp-content/uploads/2019/09/Cereal-homepage-final-1250x833.jpg)">
+						<a href="/shop" class="hoverImgsLink">
+							<span class="catImageCaption">Cereal Volume 18</span>
+						</a>
+					</li>
+					
+					<li class="contentItem portrait">
+Subject<ul id="menu-subject" class="menu"><li id="menu-item-37628" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-37628"><a href="https://readcereal.com/category/travel/" data-img-url="https://readcereal.com/wp-content/uploads/2019/05/CEREAL_Travel-1250x833.jpg" data-img-caption="South Atlantic, Cape Town.">Travel</a></li>
+<li id="menu-item-37631" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-37631"><a href="https://readcereal.com/category/art/" data-img-url="https://readcereal.com/wp-content/uploads/2018/10/Kettles-Yard_landscape1_edit-1250x833.jpg" data-img-caption="Kettle&#039;s Yard.">Art</a></li>
+<li id="menu-item-37629" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-37629"><a href="https://readcereal.com/category/design/" data-img-url="https://readcereal.com/wp-content/uploads/2019/05/CEREAL_Design-1250x833.jpg" data-img-caption="Apparatus Studio, Los Angeles">Design</a></li>
+<li id="menu-item-37630" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-37630"><a href="https://readcereal.com/category/style/" data-img-url="https://readcereal.com/wp-content/uploads/2019/05/CEREAL_Style-1250x833.jpg" data-img-caption="Mr Porter x Cereal, London">STYLE</a></li>
+<li id="menu-item-37655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37655"><a href="https://readcereal.com/city-guides/" data-img-url="https://readcereal.com/wp-content/uploads/2019/05/CEREAL_City-Guides_2-1250x833.jpg" data-img-caption="Paris ">City Guides</a></li>
+</ul>Media<ul id="menu-media" class="menu"><li id="menu-item-37656" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37656"><a href="https://readcereal.com/film/" data-img-url="https://readcereal.com/wp-content/uploads/2019/05/CEREAL_City-Film-1250x833.jpg" data-img-caption="Graanmarkt 13, Antwerp">Film</a></li>
+<li id="menu-item-37657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37657"><a href="https://readcereal.com/playlist/" data-img-url="https://readcereal.com/wp-content/uploads/2019/05/CEREAL_Playlist-1250x833.jpg" data-img-caption="Spring Playlist 2019">Playlist</a></li>
+<li id="menu-item-38280" class="store-link menu-item menu-item-type-post_type menu-item-object-page menu-item-38280"><a href="https://readcereal.com/shop/" data-img-url="https://readcereal.com/wp-content/uploads/2019/09/Cereal-homepage-final-1250x833.jpg" data-img-caption="Cereal Volume 18">Shop</a></li>
+</ul>					</li>
+				</ul>
+			</div>
+
+		
+				
+
+			
+			<div class="latestPosts">
+				<ul class="contentGrid">
+								<li class="contentItem landscape">		
+						<a href="https://readcereal.com/infinite-blue/">
+
+							<img class="lazyload gridFeatured" data-src="https://readcereal.com/wp-content/uploads/2020/02/Infinite-Blue-landscape-1-1455x935.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2020/02/Infinite-Blue-landscape-1-1455x935.jpg 1455w, https://readcereal.com/wp-content/uploads/2020/02/Infinite-Blue-landscape-1-727x467.jpg 727w, https://readcereal.com/wp-content/uploads/2020/02/Infinite-Blue-landscape-1-1032x663.jpg 1032w" data-sizes="auto" alt="Infinite Blue"/>					
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/design/">Design</a>					
+					</div>
+					<h2><a href="https://readcereal.com/infinite-blue/">Infinite Blue</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">Gio Ponti&#8217;s iconic hotel in Sorrento, Italy. </span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem portrait">		
+						<a href="https://readcereal.com/crystal-bridges/">
+
+							<img class="lazyload gridPortrait" data-src="https://readcereal.com/wp-content/uploads/2020/02/Crystal-Bridges-portrait-22-696x963.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2020/02/Crystal-Bridges-portrait-22-696x963.jpg 696w, https://readcereal.com/wp-content/uploads/2020/02/Crystal-Bridges-portrait-22-348x481.jpg 348w, https://readcereal.com/wp-content/uploads/2020/02/Crystal-Bridges-portrait-22-1392x1926.jpg 1392w" data-sizes="auto" alt="Crystal Bridges"/>
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/art/">Art</a>					
+					</div>
+					<h2><a href="https://readcereal.com/crystal-bridges/">Crystal Bridges</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">Exploring Crystal Bridges Museum of American Art, Arkansas.</span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem portrait">		
+						<a href="https://readcereal.com/villa-kerylos/">
+
+							<img class="lazyload gridPortrait" data-src="https://readcereal.com/wp-content/uploads/2020/01/Villa-Kerylos-portrait-17-696x963.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2020/01/Villa-Kerylos-portrait-17-696x963.jpg 696w, https://readcereal.com/wp-content/uploads/2020/01/Villa-Kerylos-portrait-17-348x481.jpg 348w, https://readcereal.com/wp-content/uploads/2020/01/Villa-Kerylos-portrait-17-1392x1926.jpg 1392w" data-sizes="auto" alt="Hellenic Spirit"/>
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/design/">Design</a>  
+	<a href="https://readcereal.com/category/travel/">Travel</a>  
+	<a href="https://readcereal.com/category/travel/france/">France</a>					
+					</div>
+					<h2><a href="https://readcereal.com/villa-kerylos/">Hellenic Spirit</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">A visit to Villa Kerylos on the French Riviera, commissioned by Théodore Reinach in 1900, and modelled after 2nd century BCE homes of the Greek island of Delos. </span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem portrait">		
+						<a href="https://readcereal.com/torel-1884/">
+
+							<img class="lazyload gridPortrait" data-src="https://readcereal.com/wp-content/uploads/2020/01/TOREL1884-portrait-4-696x963.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2020/01/TOREL1884-portrait-4-696x963.jpg 696w, https://readcereal.com/wp-content/uploads/2020/01/TOREL1884-portrait-4-348x481.jpg 348w, https://readcereal.com/wp-content/uploads/2020/01/TOREL1884-portrait-4-1392x1926.jpg 1392w" data-sizes="auto" alt="Torel 1884"/>
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/travel/">Travel</a>  
+	<a href="https://readcereal.com/category/travel/portugal/">Portugal</a>					
+					</div>
+					<h2><a href="https://readcereal.com/torel-1884/">Torel 1884</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">A conceptually designed hotel and former palace in Porto, inspired by Portugal&#8217;s Age of Discovery. <br/>
+</span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem portrait">		
+						<a href="https://readcereal.com/community-through-craft/">
+
+							<img class="lazyload gridPortrait" data-src="https://readcereal.com/wp-content/uploads/2020/01/Studio-Pottery-portrait-1-696x963.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2020/01/Studio-Pottery-portrait-1-696x963.jpg 696w, https://readcereal.com/wp-content/uploads/2020/01/Studio-Pottery-portrait-1-348x481.jpg 348w, https://readcereal.com/wp-content/uploads/2020/01/Studio-Pottery-portrait-1-1392x1926.jpg 1392w" data-sizes="auto" alt="Community Through Craft"/>
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/art/">Art</a>  
+	<a href="https://readcereal.com/category/art/united-kingdom/">United Kingdom</a>  
+	<a href="https://readcereal.com/category/design/">Design</a>  
+	<a href="https://readcereal.com/category/design/london-design/">London</a>					
+					</div>
+					<h2><a href="https://readcereal.com/community-through-craft/">Community Through Craft</a></h2>
+					<div class="articleExcerpt"><p><span class="articleSubtitle">A Conversation with Studio Pottery London</span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem portrait">		
+						<a href="https://readcereal.com/mirage/">
+
+							<img class="lazyload gridPortrait" data-src="https://readcereal.com/wp-content/uploads/2020/01/Amanjena_grid3-696x963.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2020/01/Amanjena_grid3-696x963.jpg 696w, https://readcereal.com/wp-content/uploads/2020/01/Amanjena_grid3-348x481.jpg 348w, https://readcereal.com/wp-content/uploads/2020/01/Amanjena_grid3-1392x1926.jpg 1392w" data-sizes="auto" alt="Mirage"/>
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/travel/">Travel</a>  
+	<a href="https://readcereal.com/category/travel/morocco/">Morocco</a>					
+					</div>
+					<h2><a href="https://readcereal.com/mirage/">Mirage</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">A stay at Amanjena, on the outskirts of Marrakech, Morocco.</span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem landscape">		
+						<a href="https://readcereal.com/winter-playlist-2019/">
+
+							<img class="lazyload gridFeatured" data-src="https://readcereal.com/wp-content/uploads/2019/12/DSC1667-1455x935.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2019/12/DSC1667-1455x935.jpg 1455w, https://readcereal.com/wp-content/uploads/2019/12/DSC1667-727x467.jpg 727w, https://readcereal.com/wp-content/uploads/2019/12/DSC1667-1032x663.jpg 1032w" data-sizes="auto" alt="Winter Playlist 2019"/>					
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/art/music/">Music</a>  
+	<a href="https://readcereal.com/category/art/music/playlist/">Playlist</a>					
+					</div>
+					<h2><a href="https://readcereal.com/winter-playlist-2019/">Winter Playlist 2019</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">A selection of songs for the winter season. </span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem landscape">		
+						<a href="https://readcereal.com/casa-mollino/">
+
+							<img class="lazyload gridFeatured" data-src="https://readcereal.com/wp-content/uploads/2019/12/casa-mollino-landscape-3-1455x935.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2019/12/casa-mollino-landscape-3-1455x935.jpg 1455w, https://readcereal.com/wp-content/uploads/2019/12/casa-mollino-landscape-3-727x467.jpg 727w, https://readcereal.com/wp-content/uploads/2019/12/casa-mollino-landscape-3-1032x663.jpg 1032w" data-sizes="auto" alt="Casa Mollino"/>					
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/design/">Design</a>  
+	<a href="https://readcereal.com/category/design/italy-design/">Italy</a>					
+					</div>
+					<h2><a href="https://readcereal.com/casa-mollino/">Casa Mollino</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">A visit to the 19th century apartment by Italian architect and designer Carlo Mollino, located by the river Po in Turin, Italy.</span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem landscape">		
+						<a href="https://readcereal.com/the-loft-pots/">
+
+							<img class="lazyload gridFeatured" data-src="https://readcereal.com/wp-content/uploads/2019/12/Steve-H-Exhib-journal-landscape-2-1-1455x935.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2019/12/Steve-H-Exhib-journal-landscape-2-1-1455x935.jpg 1455w, https://readcereal.com/wp-content/uploads/2019/12/Steve-H-Exhib-journal-landscape-2-1-727x467.jpg 727w, https://readcereal.com/wp-content/uploads/2019/12/Steve-H-Exhib-journal-landscape-2-1-1032x663.jpg 1032w" data-sizes="auto" alt="The Loft Pots"/>					
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/art/">Art</a>  
+	<a href="https://readcereal.com/category/art/united-kingdom/">United Kingdom</a>					
+					</div>
+					<h2><a href="https://readcereal.com/the-loft-pots/">The Loft Pots</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">An exhibition by Steve Harrison at Blue Mountain School, London. </span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem landscape">		
+						<a href="https://readcereal.com/apollo/">
+
+							<img class="lazyload gridFeatured" data-src="https://readcereal.com/wp-content/uploads/2019/12/BB-landscape-1-1455x935.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2019/12/BB-landscape-1-1455x935.jpg 1455w, https://readcereal.com/wp-content/uploads/2019/12/BB-landscape-1-727x467.jpg 727w, https://readcereal.com/wp-content/uploads/2019/12/BB-landscape-1-1032x663.jpg 1032w" data-sizes="auto" alt="Apollo: Purposeful Ease"/>					
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/design/">Design</a>  
+	<a href="https://readcereal.com/category/design/partnership-design/">Partnership</a>					
+					</div>
+					<h2><a href="https://readcereal.com/apollo/">Apollo: Purposeful Ease</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">Exploring Italian designer Antonio Citterio&#8217;s latest series, Apollo, designed for Maxalto. </span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem portrait">		
+						<a href="https://readcereal.com/natural-indigo/">
+
+							<img class="lazyload gridPortrait" data-src="https://readcereal.com/wp-content/uploads/2019/12/Nila-House-portrait-edit3-696x963.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2019/12/Nila-House-portrait-edit3-696x963.jpg 696w, https://readcereal.com/wp-content/uploads/2019/12/Nila-House-portrait-edit3-348x481.jpg 348w, https://readcereal.com/wp-content/uploads/2019/12/Nila-House-portrait-edit3-1392x1926.jpg 1392w" data-sizes="auto" alt="Natural Indigo"/>
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/style/">Style</a>  
+	<a href="https://readcereal.com/category/style/fashion/">Fashion</a>  
+	<a href="https://readcereal.com/category/travel/">Travel</a>  
+	<a href="https://readcereal.com/category/travel/india/">India</a>  
+	<a href="https://readcereal.com/category/travel/india/jaipur/">Jaipur</a>					
+					</div>
+					<h2><a href="https://readcereal.com/natural-indigo/">Natural Indigo</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">Attending the launch of Nila House, a gallery, retail space and design platform in Jaipur, Rajasthan, supporting traditional Indian textiles and natural dyeing.  </span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem landscape">		
+						<a href="https://readcereal.com/bauhaus-in-bristol/">
+
+							<img class="lazyload gridFeatured" data-src="https://readcereal.com/wp-content/uploads/2019/12/KS-Collection-landscape-4-1455x935.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2019/12/KS-Collection-landscape-4-1455x935.jpg 1455w, https://readcereal.com/wp-content/uploads/2019/12/KS-Collection-landscape-4-727x467.jpg 727w, https://readcereal.com/wp-content/uploads/2019/12/KS-Collection-landscape-4-1032x663.jpg 1032w" data-sizes="auto" alt="Bauhaus in Bristol"/>					
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/design/">Design</a>  
+	<a href="https://readcereal.com/category/design/architecture/">Architecture</a>					
+					</div>
+					<h2><a href="https://readcereal.com/bauhaus-in-bristol/">Bauhaus in Bristol</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">How the Bauhaus architect and designer Marcel Breuer came to work in the city of Bristol, UK, constructing one of his most-prized buildings of his career in the process.</span></p>
+</div> 
+				</div>
+			</li>
+												<li class="contentItem portrait">		
+						<a href="https://readcereal.com/permanent-collection/">
+
+							<img class="lazyload gridPortrait" data-src="https://readcereal.com/wp-content/uploads/2019/11/Permanent-Collection-portrait-1-1-696x963.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2019/11/Permanent-Collection-portrait-1-1-696x963.jpg 696w, https://readcereal.com/wp-content/uploads/2019/11/Permanent-Collection-portrait-1-1-348x481.jpg 348w, https://readcereal.com/wp-content/uploads/2019/11/Permanent-Collection-portrait-1-1-1392x1926.jpg 1392w" data-sizes="auto" alt="Permanent Collection"/>
+				</a>				
+				<div class="itemMeta">
+					<div class="postCategories">					
+						<a href="https://readcereal.com/category/style/">Style</a>  
+	<a href="https://readcereal.com/category/style/fashion/">Fashion</a>					
+					</div>
+					<h2><a href="https://readcereal.com/permanent-collection/">Permanent Collection</a></h2>
+					<div class="articleExcerpt"><p><span class="articleExcerpt">An autumn style edit, presented at Kettle&#8217;s Yard. </span></p>
+</div> 
+				</div>
+			</li>
+					
+	
+				</ul>
+			</div>
+			
+			
+			
+				<div class="fullWidthHero">
+					<a href="http://connollyengland.com/" target="_blank" rel="noopener">
+					<img class="lazyload" data-src="https://readcereal.com/wp-content/uploads/2019/10/Cereal-banner-men-2560x941.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2019/10/Cereal-banner-men-2560x941.jpg 2560w, https://readcereal.com/wp-content/uploads/2019/10/Cereal-banner-men-200x74.jpg 200w, https://readcereal.com/wp-content/uploads/2019/10/Cereal-banner-men-768x282.jpg 768w, https://readcereal.com/wp-content/uploads/2019/10/Cereal-banner-men-800x294.jpg 800w, https://readcereal.com/wp-content/uploads/2019/10/Cereal-banner-men-696x256.jpg 696w, https://readcereal.com/wp-content/uploads/2019/10/Cereal-banner-men-1455x535.jpg 1455w" data-sizes="auto" alt=""/>	
+				</a>
+	
+					
+			</div>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	<div class="featuredProducts">
+		<div class="wrapper">
+			<div class="subscriptionSplash">
+				<div class="subscriptionImg">
+					
+						
+					<figure>
+						<img class="lazyload gridFeatured" data-src="https://readcereal.com/wp-content/uploads/2019/05/cereal-1455x935.jpg" data-srcset="https://readcereal.com/wp-content/uploads/2019/05/cereal-1455x935.jpg 1455w, https://readcereal.com/wp-content/uploads/2019/05/cereal-727x467.jpg 727w, https://readcereal.com/wp-content/uploads/2019/05/cereal-1032x663.jpg 1032w" data-sizes="auto" alt="Home"/>
+					</figure>			
+					
+				</div>
+				<div class="subscriptionText">
+					<h3>Twice a year, delivered to your door.</h3>
+					<span>On the subject of Travel, Art, Design and Style</span>
+					<a href="https://readcereal.com/product/subscription/">Subscribe</a>
+				</div>
+			</div>
+			<h2>Featured products</h2>
+			<ul class="products clear">				
+<li class="post-45486 product type-product status-publish has-post-thumbnail product_cat-magazine product_shipping_class-magazine first instock featured shipping-taxable purchasable product-type-variable">
+	<a href="https://readcereal.com/product/cereal-volume-18/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img data-src="https://readcereal.com/wp-content/uploads/2019/09/Cereal-Vol18-Shop-cover-1032x663.jpg" width="548" height="352" class="attachment-shop_catalog wp-post-image lazyload" alt="">
+	
+
+	<h2 class="woocommerce-loop-product__title">Cereal Volume 18</h2>	
+	<span class="productSubTitle">Autumn Winter 2019</span>
+	
+
+	
+	<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>12.00</span></span>
+
+
+	</a><a href="https://readcereal.com/product/cereal-volume-18/" data-quantity="1" class="button product_type_variable add_to_cart_button" data-product_id="45486" data-product_sku="977205132700916-1-1" aria-label="Select options for &ldquo;Cereal Volume 18&rdquo;" rel="nofollow">Select options</a>
+	
+
+</li>
+<li class="post-26234 product type-product status-publish has-post-thumbnail product_cat-magazine product_shipping_class-magazine member-discount discount-restricted  instock shipping-taxable purchasable product-type-variable">
+	<a href="https://readcereal.com/product/cereal-volume-16/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img data-src="https://readcereal.com/wp-content/uploads/2018/09/Volume-16-cover-2-1032x663.jpg" width="548" height="352" class="attachment-shop_catalog wp-post-image lazyload" alt="">
+	
+
+	<h2 class="woocommerce-loop-product__title">Cereal Volume 16</h2>	
+	<span class="productSubTitle">Autumn Winter 2018</span>
+	
+
+	
+	<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>12.00</span></span>
+
+
+	</a><a href="https://readcereal.com/product/cereal-volume-16/" data-quantity="1" class="button product_type_variable add_to_cart_button" data-product_id="26234" data-product_sku="977205132700916" aria-label="Select options for &ldquo;Cereal Volume 16&rdquo;" rel="nofollow">Select options</a>
+	
+
+</li>
+					
+			</ul>
+		
+		</div>
+		
+	</div>	
+	
+	
+
+	</div><!-- #content -->
+	
+	<footer id="colophon" class="site-footer">
+		<div class="site-info">	
+			<div class="aboutText">
+				<p>Cereal is a biannual, travel &#038; style magazine based in the United Kingdom. Each issue focusses on a select number of destinations, alongside engaging interviews and stories on unique design, art, and fashion.</p>
+				&copy; <img src="https://readcereal.com/wp-content/themes/cereal/img/logo.svg" width="60" height="11" alt="Cereal Magazine" pagespeed_url_hash="3583301038" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+			</div>
+			<div class="footerMenus clear">
+				<div>
+					<span>Info</span>
+					<ul id="menu-info-menu-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12973"><a href="https://readcereal.com/find-a-stockist/">Stockists</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9959"><a href="https://readcereal.com/contact/">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9960"><a href="https://readcereal.com/jobs/">Career</a></li>
+</ul>				</div>
+				<div>
+					<span>Media</span>
+					<ul id="menu-media-menu-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21496"><a href="https://readcereal.com/playlist/">Playlists</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13773"><a href="https://readcereal.com/film/">Film</a></li>
+</ul>				</div>
+				<div>
+					<span>Website</span>
+					<ul id="menu-website-menu-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23520"><a href="https://readcereal.com/terms-and-conditions/">Terms</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24073"><a href="https://readcereal.com/shipping/">Shipping</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23526"><a href="https://readcereal.com/faqs/">FAQs</a></li>
+</ul>				</div>
+
+			</div>			
+			<div class="footerSocial">
+				<span class="formTitle">Newsletter</span>
+				<form action="//readcereal.us6.list-manage.com/subscribe/post?u=d57521ff850d9b4f7a8e88659&amp;id=79b9c285f6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    				<label for="Email" style="display: none">Email</label>
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL-footer" placeholder="enter email" required="">
+					<div class="offScreen">
+    					<label for="Offscreen" style="display: none">Offscreen</label>
+						<input type="text" name="b_d57521ff850d9b4f7a8e88659_79b9c285f6" value="">
+					</div>
+					<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe-footer" class="button">
+				</form>				
+				<a href="https://instagram.com/cerealmag" target="_blank" rel="noopener" title="CEREAL Instagram">
+					<img src="https://readcereal.com/wp-content/themes/cereal/img/instagram.svg" alt="Instagram" height="12" width="12" pagespeed_url_hash="369535323" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+				</a>
+				<a href="https://www.twitter.com/cerealmag" target="_blank" rel="noopener" title="CEREAL Twitter">
+					<img src="https://readcereal.com/wp-content/themes/cereal/img/twitter.svg" alt="Twitter" height="12" width="12" pagespeed_url_hash="752250956" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+				</a>
+				<a href="https://www.facebook.com/cerealmag" target="_blank" rel="noopener" title="CEREAL Facebook">
+					<img src="https://readcereal.com/wp-content/themes/cereal/img/facebook.svg" alt="Facebook" height="12" width="12" pagespeed_url_hash="3661498813" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+				</a>
+				<a href="https://uk.pinterest.com/cerealmag/" target="_blank" rel="noopener" title="CEREAL Pinterest">
+					<img src="https://readcereal.com/wp-content/themes/cereal/img/pinterest.svg" alt="Pinterest" height="12" width="12" pagespeed_url_hash="1093925507" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+				</a>
+			</div>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+<div class="cta-bar">
+	<div class="wrapper">
+		<p>Monthly updates on the subjects of design, art, architecture and travel.</p>
+		<div class="newsletter-signup">
+			<form action="//readcereal.us6.list-manage.com/subscribe/post?u=d57521ff850d9b4f7a8e88659&amp;id=79b9c285f6" method="post" id="mc-embedded-subscribe-form-bar" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+				<label for="Email" style="display: none">Email</label>
+				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL-bar" placeholder="enter your email address" required="">
+				<div class="offScreen">
+					<label for="Offscreen" style="display: none">Offscreen</label>
+					<input type="text" name="b_d57521ff850d9b4f7a8e88659_79b9c285f6" value="">
+				</div>
+					<input type="submit" value="OK" name="subscribe" id="mc-embedded-subscribe-bar" class="button">
+			</form>
+		</div>
+		<span class="close">Close</span>
+	</div>
+</div>
+	<script type="text/javascript">var c=document.body.className;c=c.replace(/woocommerce-no-js/,'woocommerce-js');document.body.className=c;</script>
+	<script type='text/javascript' src='https://readcereal.com/wp-content/themes/cereal/js/lazysizes.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://readcereal.com/wp-content/themes/cereal/js/imagesLoaded.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://readcereal.com/wp-content/themes/cereal/js/jquery.fitvids.js?ver=1.0'></script>
+<script type='text/javascript' src='https://readcereal.com/wp-content/themes/cereal/js/main.js?ver=1.0'></script>
+<script type='text/javascript' src='https://readcereal.com/wp-includes/js/wp-embed.min.js?ver=cdef2df6dc0d55a5c731c759fdcf5ba1'></script>
+<script type='text/javascript'>//<![CDATA[
+var oraksoft_js_data_watc={"cart_url":"https:\/\/readcereal.com\/bag\/"};
+//]]></script>
+<script type='text/javascript' src='https://readcereal.com/wp-content/plugins/woocommerce-ajax-add-to-cart/orak-ajax-add-to-cart.js?ver=cdef2df6dc0d55a5c731c759fdcf5ba1'></script>
+</body>
+</html>
